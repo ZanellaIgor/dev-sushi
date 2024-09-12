@@ -1,5 +1,6 @@
+import { CartSidebar } from '@/components/cart/sidebar';
 import { Logo } from '@/components/logo';
-import { ThemeToogle } from './theme-toogle';
+import { ThemeToogle } from '@/components/theme-toogle';
 
 export const Header = () => {
   return (
@@ -8,7 +9,9 @@ export const Header = () => {
         <Logo />
         <ThemeToogle />
       </div>
-      <div className="flex items-center gap-3">...</div>
+      <div className="flex items-center gap-3">
+        <CartSidebar />
+      </div>
     </header>
   );
 };

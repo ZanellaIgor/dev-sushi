@@ -1,6 +1,7 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { TabsSkeleton } from '@/components/products/skeleton';
+import { ProductsTab } from '@/components/products/tab';
 import { Suspense } from 'react';
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
       <Header />
       <div className="mx-3">..</div>
       <Suspense fallback={<TabsSkeleton />}>
-        <TabsSkeleton />
+        <ProductsTab />
       </Suspense>
       <Footer />
     </div>

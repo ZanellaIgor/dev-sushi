@@ -11,10 +11,14 @@ import {
 } from '@/components/ui/sheet';
 import { useCartStore } from '@/store/cart-store';
 import { RocketIcon } from 'lucide-react';
+import { useState } from 'react';
+import { CheckoutDialog } from '../checkout/dialog';
 import { CartItem } from './item';
 
 export const CartSidebar = () => {
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
   const { cart } = useCartStore((state) => state);
+
   let subTotal = 0;
   for (let item of cart) {
     subTotal += item.product.price * item.quantity;
@@ -50,10 +54,15 @@ export const CartSidebar = () => {
         <Separator className="my-4" />
 
         <div className="flex justify-center items-center">
-          <Button disabled={cart.length === 0} type="submit">
-            Finalizar compra
+          <Button
+            disabled={cart.length === 0}
+            type="submit"
+            onClick={() => setCheckoutOpen(true)}
+          >
+            Finalizar Compra
           </Button>
         </div>
+        <CheckoutDialog open={checkoutOpen} openChange={setCheckoutOpen} />
       </SheetContent>
     </Sheet>
   );

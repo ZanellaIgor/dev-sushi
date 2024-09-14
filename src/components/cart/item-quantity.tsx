@@ -12,7 +12,7 @@ export const CartItemQuantity = ({ cartItem }: { cartItem: Cart }) => {
         className="size-5"
         variant="outline"
         size="icon"
-        onClick={() => upsertCartItem(cartItem.product, +1)}
+        onClick={() => upsertCartItem(cartItem.product, 1)}
       >
         <PlusIcon />
       </Button>

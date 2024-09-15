@@ -56,3 +56,5 @@ Inicie o servidor de desenvolvimento:
 npm run dev
 Abra http://localhost:3000 no seu navegador para ver o projeto em execução.
 ```
+
+Obs: _No env.example contém um número para enviar o pedido, lembre de alterar o mesmo para .env_

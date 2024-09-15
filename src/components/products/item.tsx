@@ -2,18 +2,27 @@
 import { Button } from '@/components/ui/button';
 import { ToastAction } from '@/components/ui/toast';
 import { useToast } from '@/hooks/use-toast';
+import { useCartOpen } from '@/store/cart-open';
 import { useCartStore } from '@/store/cart-store';
 import { Product } from '@/types/products';
 
 export const ProductItem = ({ product }: { product: Product }) => {
   const { toast } = useToast();
   const { upsertCartItem } = useCartStore((state) => state);
+  const { toggleCartOpen } = useCartOpen((state) => state);
   const handleAddToCart = () => {
     upsertCartItem(product, 1);
     toast({
       title: 'Adicionado ao carrinho',
       description: 'O item foi adicionado ao carrinho.',
-      action: <ToastAction altText="Fechar">Ir para carrinho</ToastAction>,
+      action: (
+        <ToastAction
+          altText="Ir para carrinho"
+          onClick={() => toggleCartOpen(true)}
+        >
+          Ir para carrinho
+        </ToastAction>
+      ),
     });
   };
 

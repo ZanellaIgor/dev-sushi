@@ -20,35 +20,39 @@ type CheckoutDialogProps = {
 export const CheckoutDialog = ({ open, openChange }: CheckoutDialogProps) => {
   const [step, setStep] = useState<CheckoutSteps>('user');
 
-  let progressValue = 0;
-  switch (step) {
-    case 'user':
-      progressValue = 30;
-      break;
-    case 'address':
-      progressValue = 66;
-      break;
-    case 'finish':
-      progressValue = 100;
-      break;
-  }
+  const getStep = () => {
+    switch (step) {
+      case 'user':
+        return {
+          progressValue: 30,
+          title: 'Dados Pessoais',
+          component: <StepUser setStep={setStep} />,
+        };
+      case 'address':
+        return {
+          progressValue: 66,
+          title: 'Entrega',
+          component: <StepAddress setStep={setStep} />,
+        };
+
+      case 'finish':
+        return {
+          progressValue: 100,
+          title: 'Envio para Whatsapp',
+          component: <StepFinish setStep={setStep} />,
+        };
+    }
+  };
+  const { progressValue, title, component } = getStep();
 
   return (
     <Dialog open={open} onOpenChange={openChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>
-            {step === 'user' && 'Dados Pessoais'}
-            {step === 'address' && 'Entrega'}
-            {step === 'finish' && 'Envio para Whatsapp'}
-          </DialogTitle>
+          <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
         <Progress value={progressValue} />
-        <div className="flex flex-col gap-3">
-          {step === 'user' && <StepUser setStep={setStep} />}
-          {step === 'address' && <StepAddress setStep={setStep} />}
-          {step === 'finish' && <StepFinish />}
-        </div>
+        <div className="flex flex-col gap-3">{component}</div>
       </DialogContent>
     </Dialog>
   );

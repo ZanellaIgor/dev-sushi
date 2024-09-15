@@ -1,7 +1,7 @@
 export const Logo = () => {
   return (
     <div className="text-xl">
-      Loja do <span className="font-bold">Papakooo</span>
+      Dev<span className="font-bold"> Sushi</span>
     </div>
   );
 };

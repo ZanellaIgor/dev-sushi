@@ -36,7 +36,7 @@ export const ProductsTab = async () => {
   ];
 
   return (
-    <Tabs>
+    <Tabs defaultValue="sushi">
       <TabsList className="flex">
         {tabs.map((tab) => (
           <TabsTrigger key={tab.value} value={tab.value} className="flex-1">

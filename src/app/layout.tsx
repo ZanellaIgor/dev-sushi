@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Loja',
+  title: 'Dev Sushi',
   description: 'Loja de condimentos alimentícios',
 };
 
@@ -15,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={'min-h-screen bg-background font-sans antialiased'}>
+      <body
+        className={'bg-background font-sans antialiased max-height-[100vh]'}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

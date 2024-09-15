@@ -9,6 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { useCartOpen } from '@/store/cart-open';
 import { useCartStore } from '@/store/cart-store';
 import { RocketIcon } from 'lucide-react';
 import { useState } from 'react';
@@ -18,14 +19,14 @@ import { CartItem } from './item';
 export const CartSidebar = () => {
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const { cart } = useCartStore((state) => state);
-
-  let subTotal = 0;
-  for (let item of cart) {
-    subTotal += item.product.price * item.quantity;
-  }
+  const { isCartOpen, toggleCartOpen } = useCartOpen((state) => state);
+  const subTotal = cart.reduce(
+    (sum, item) => sum + item.product.price * item.quantity,
+    0
+  );
 
   return (
-    <Sheet>
+    <Sheet open={isCartOpen} onOpenChange={toggleCartOpen}>
       <SheetTrigger asChild>
         <Button className="relative">
           <RocketIcon className="mr-2" />

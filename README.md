@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dev-sushi
 
-## Getting Started
+Dev-sushi é uma aplicação web de loja de condimentos alimentícios, desenvolvida com Next.js, Tailwind CSS, React Hook Form, Shadcn-ui.
 
-First, run the development server:
+## Sobre o Projeto
+
+Dev-sushi é uma aplicação web que oferece uma experiência de compra intuitiva e saborosa. Com um design moderno e funcionalidades inovadoras, você pode pedir seu sushi favorito com apenas alguns cliques.
+
+## Funcionalidades Principais
+
+- Carrinho de compras
+- Formulário multi-etapa
+- Envio automático de pedidos via WhatsApp
+- Tema Dark e Light
+
+| Tela em tema Dark                                       | Tela em tema Light                                        |
+| ------------------------------------------------------- | --------------------------------------------------------- |
+| ![Tela em tema Dark](/public/images/view/view-dark.png) | ![Tela em tema Light](/public/images/view/view-light.png) |
+
+| Carrinho de compras                                       | Formulário multi-step                                             |
+| --------------------------------------------------------- | ----------------------------------------------------------------- |
+| ![Carrinho de compras](/public/images/view/view-cart.png) | ![Formulário multi-step](/public/images/view/view-multi-step.png) |
+
+## Tecnologias
+
+As principais tecnologias e bibliotecas usadas no projeto são:
+
+-Next.js: Framework React para renderização do lado do servidor.
+-React: Biblioteca para construção de interfaces de usuário.
+-Tailwind CSS: Framework de CSS utilitário para estilização rápida.
+-Zod: Biblioteca de validação de esquemas e dados.
+-React Hook Form: Solução para formulários em React com foco em performance e usabilidade.
+-Shadcn-ui: Componentes acessíveis e prontos para produção.
+-Zustand: Gerenciamento de estado leve e performático.
+
+## Instalação
+
+Para rodar este projeto localmente, siga os passos abaixo:
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/ZanellaIgor/dev-sushi.git
+cd dev-sushi
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Abra http://localhost:3000 no seu navegador para ver o projeto em execução.
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

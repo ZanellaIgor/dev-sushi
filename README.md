@@ -26,12 +26,19 @@ Dev-sushi é uma aplicação web que oferece uma experiência de compra intuitiv
 As principais tecnologias e bibliotecas usadas no projeto são:
 
 -Next.js: Framework React para renderização do lado do servidor.
+
 -React: Biblioteca para construção de interfaces de usuário.
+
 -Tailwind CSS: Framework de CSS utilitário para estilização rápida.
+
 -Zod: Biblioteca de validação de esquemas e dados.
+
 -React Hook Form: Solução para formulários em React com foco em performance e usabilidade.
+
 -Shadcn-ui: Componentes acessíveis e prontos para produção.
+
 -Zustand: Gerenciamento de estado leve e performático.
+
 
 ## Instalação
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { Form } from '@/components/ui/form';
 import { useCheckoutStore } from '@/store/checkout-store';
 import { CheckoutSteps } from '@/types/checkout-step';

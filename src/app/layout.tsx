@@ -15,9 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={'bg-background font-sans antialiased max-height-[100vh]'}
-      >
+      <body className="h-dvh overflow-hidden bg-background font-sans antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

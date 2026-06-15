@@ -5,7 +5,6 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { HTMLInputTypeAttribute } from 'react';
 import { Control, FieldValues, Path } from 'react-hook-form';
 import {
   Select,
@@ -20,7 +19,6 @@ interface FormFieldComponentProps<T extends FieldValues> {
   name: Path<T>;
   label: string;
   placeholder?: string;
-  type?: HTMLInputTypeAttribute;
   autoFocus?: boolean;
 }
 
@@ -29,7 +27,6 @@ export const InputSelect = <T extends FieldValues>({
   name,
   label,
   placeholder,
-  type = 'text',
   autoFocus = false,
 }: FormFieldComponentProps<T>) => (
   <FormField

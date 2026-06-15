@@ -4,7 +4,7 @@ import { ThemeToogle } from '@/components/theme-toogle';
 
 export const Header = () => {
   return (
-    <header className="flex justify-between items-center my-5 mx-3">
+    <header className="flex shrink-0 items-center justify-between py-5">
       <div className="flex items-center gap-3">
         <Logo />
         <ThemeToogle />

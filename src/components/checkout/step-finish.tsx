@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { generateMessage } from '@/lib/generate-message';
 import { useCheckoutStore } from '@/store/checkout-store';

@@ -2,13 +2,12 @@ import { useCartStore } from '@/store/cart-store';
 import { useCheckoutStore } from '@/store/checkout-store';
 
 export const generateMessage = () => {
-  const { name, address } = useCheckoutStore((state) => state);
-  const { cart } = useCartStore((state) => state);
+  const { name, address } = useCheckoutStore.getState();
+  const { cart } = useCartStore.getState();
 
-  let orderProducts = [];
-  for (const item of cart) {
-    orderProducts.push(`${item.quantity}x ${item.product.name}`);
-  }
+  const orderProducts = cart.map(
+    (item) => `${item.quantity}x ${item.product.name}`
+  );
   return `**Dados do Cliente:**
   Nome:${name}
   Endereço:${address.street}, ${address.number} ${address.complement}, ${

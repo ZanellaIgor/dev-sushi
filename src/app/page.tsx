@@ -6,11 +6,13 @@ import { Suspense } from 'react';
 
 export default function Home() {
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="mx-auto flex h-dvh w-full max-w-4xl flex-col px-3">
       <Header />
-      <Suspense fallback={<TabsSkeleton />}>
-        <ProductsTab />
-      </Suspense>
+      <main className="flex min-h-0 flex-1 flex-col">
+        <Suspense fallback={<TabsSkeleton />}>
+          <ProductsTab />
+        </Suspense>
+      </main>
       <Footer />
     </div>
   );
